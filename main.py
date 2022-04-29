@@ -264,9 +264,10 @@ class GUI():
                         try:
                             artist = yt.metadata[0]['Artist']
                             album = yt.metadata[0]['Album']
-                            song = yt.metadata[0]['Song']
+                            song = yt.title
                         except:
-                            artist = album = song = yt.title
+                            artist = album = "UNKNOWN"
+                            song = yt.title
                         print(artist, album, song)
                         video = yt.streams.filter(only_audio=True).first()
                         MaxFileSize = video.filesize
