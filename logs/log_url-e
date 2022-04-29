@@ -1,0 +1,33 @@
+29-04-2022
+---------------------------------------------------------------------------------------------------------------------------------------
+url Exception
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=fWmUysPk030&list=PLVf_ie75f1bZyHPvgCpNGSRPMtwASSzVN&index=4@ 
+name 'requests' is not defined
+Traceback (most recent call last):
+  File "D:\HELMI\CODE\youtube downloader\main.py", line 262, in startDownload
+    print(thumbPhoto(thumbnail))
+  File "D:\HELMI\CODE\youtube downloader\main.py", line 234, in thumbPhoto
+    response = requests.get(video_thumbnail)
+NameError: name 'requests' is not defined
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=fWmUysPk030&list=PLVf_ie75f1bZyHPvgCpNGSRPMtwASSzVN&index=4@ 
+name 'video_thumbnail' is not defined
+Traceback (most recent call last):
+  File "D:\HELMI\CODE\youtube downloader\main.py", line 262, in startDownload
+    print(thumbPhoto(thumbnail))
+  File "D:\HELMI\CODE\youtube downloader\main.py", line 234, in thumbPhoto
+    response = requests.get(video_thumbnail)
+NameError: name 'video_thumbnail' is not defined
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=fWmUysPk030&list=PLVf_ie75f1bZyHPvgCpNGSRPMtwASSzVN&index=4@ 
+name 'BytesIO' is not defined
+Traceback (most recent call last):
+  File "D:\HELMI\CODE\youtube downloader\main.py", line 262, in startDownload
+    print(thumbPhoto(thumbnail))
+  File "D:\HELMI\CODE\youtube downloader\main.py", line 236, in thumbPhoto
+    img = Image.open(BytesIO(img_data))
+NameError: name 'BytesIO' is not defined
+
