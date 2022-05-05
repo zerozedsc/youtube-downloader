@@ -7,10 +7,21 @@ from pytube import YouTube, Playlist
 from datetime import datetime, date
 from threading import Thread
 from pydub import AudioSegment
-import eyed3
 from eyed3.id3.frames import ImageFrame
-import traceback, sys, os, validators, time, sv_ttk ,math, requests
+import traceback, sys, os, validators, time, sv_ttk ,math, requests, random, importlib.util, re, types, pydub, eyed3
 
+for moduleName in "pydub.utils", "pydub.audio_segment":
+    spec = importlib.util.find_spec(moduleName, None)
+    source = spec.loader.get_source(moduleName)
+    snippet = "__import__('subprocess').STARTUPINFO(dwFlags=__import__('subprocess').STARTF_USESHOWWINDOW)"
+    source, n = re.subn(r"(Popen)\((.+?)\)", rf"\1(\2, startupinfo=print('worked') or {snippet})", source, flags=re.DOTALL)
+    module = importlib.util.module_from_spec(spec)
+    exec(compile(source, module.__spec__.origin, "exec"), module.__dict__)
+    sys.modules[moduleName] = module
+module = importlib.reload(sys.modules["pydub"])
+for k, v in module.__dict__.items():
+    if isinstance(v, types.ModuleType):
+        setattr(module, k, importlib.import_module(v.__name__))
 
 class GUI():
     def __init__(self, master):
@@ -67,8 +78,10 @@ class GUI():
         self.txt_main.config(state=DISABLED)
         self.lbl_totalMB = Label(self.f_mid, text='TOTAL DOWNLOAD: 0.0 MB',font=('Comic sans ms', 13, 'normal', 'italic'), background='grey')
         self.lbl_totalMB.grid(row=2, column=0,sticky=W+E)
+        self.lbl_remainTime = Label(self.f_mid, text='REMAIN TIMES: 0.0 Minute(s)',font=('Comic sans ms', 13, 'normal', 'italic'), background='dark blue')
+        self.lbl_remainTime.grid(row=3, column=0, sticky=W + E, pady=2)
         f_mid2 = Canvas(self.f_mid, relief=RAISED)
-        f_mid2.grid(row=3, column=0,sticky=W+E)
+        f_mid2.grid(row=4, column=0,sticky=W+E, pady=1)
         self.b_mp3 = Button(f_mid2, text="MP3", style=self.style1, state='disabled')
         self.b_mp3.grid(row=0, column=0,sticky=W+E)
         self.b_mp4 = Button(f_mid2, text="MP4", style=self.style1, state='disabled')
@@ -246,7 +259,9 @@ class GUI():
                 c = k = 0
                 total_mb = 0
                 start_time = time.time()
+                self.lbl_remainTime.config(text=f'REMAIN TIMES: {random.randint(1,60)} Minute(s)')
                 for u in url:
+                    START = time.time()
                     try:
                         global MaxFileSize
 
@@ -349,6 +364,10 @@ class GUI():
                         self.lbl_barMain.config(text=f'{c}/{len(url)}')
                         k += 1
                     self.txt_main.see(INSERT)
+                    END = time.time()
+                    time_taken = float((END - START) / 60).__round__(2)
+                    estimated_time = round(time_taken * (len(url) - c), 2)
+                    self.lbl_remainTime.config(text=f'REMAIN TIMES: {estimated_time} Minute(s)')
 
                 self.txt_main.config(state=NORMAL)
                 end_time = time.time()
@@ -356,6 +375,7 @@ class GUI():
                 self.txt_main.insert(INSERT, f"\n\n{c} file(s) SUCCESS", 'success')
                 self.txt_main.insert(INSERT, f"\n{len(url) - c} files FAIL", 'error')
                 self.txt_main.insert(INSERT, f"\n{time_taken} minute(s) to download {c} file(s)", 'success')
+                self.lbl_remainTime.config(text=f'REMAIN TIMES: 0.0 Minute(s)')
 
                 self.txt_main.config(state=DISABLED)
                 self.e_search.config(state='normal')
