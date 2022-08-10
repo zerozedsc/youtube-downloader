@@ -1,3 +1,4 @@
+import json
 from tkinter import *
 from tkinter.ttk import *
 from tkinter.scrolledtext import *
@@ -8,6 +9,7 @@ from datetime import datetime, date
 from threading import Thread
 from pydub import AudioSegment
 from eyed3.id3.frames import ImageFrame
+from youtube_title_parse import get_artist_title
 import traceback, sys, os, validators, time, sv_ttk ,math, requests, random, importlib.util, re, types, pydub, eyed3
 
 for moduleName in "pydub.utils", "pydub.audio_segment":
@@ -47,10 +49,17 @@ class GUI():
         self.DATA = {}
         self.URL = ''
         self.DOWNLOAD_DIR = 'download'
+        self.PLAYLIST_TITLE = ''
+        self.PLAYLIST = []
         if not os.path.exists(os.path.abspath(self.DOWNLOAD_DIR)):
             os.makedirs(self.DOWNLOAD_DIR)
             if not os.path.exists(os.path.abspath('logs')):
                 os.makedirs('logs')
+        # create temp.json if not exist
+        if not os.path.exists(os.path.abspath("temp/temp.json")):
+            c = open("temp/temp.json", "w")
+            c.write("{}")
+            c.close()
 
         # main frame
         self.f_up = Frame(self.WIN, relief=RAISED, width=100, height=100)
@@ -205,15 +214,28 @@ class GUI():
                 print('many ' + str(self.MANY))
                 engine = Playlist(url)
                 self.txt_main.config(state=NORMAL)
-                self.txt_main.insert(INSERT, f"\nPLAYLIST FOUND, {engine.title} @{engine.owner} #{engine.playlist_id}@")
+                self.PLAYLIST_TITLE = engine.title
+                self.txt_main.insert(INSERT, f"\nPLAYLIST FOUND, {self.PLAYLIST_TITLE} @{engine.owner} #{engine.playlist_id}@")
                 urls = engine.video_urls
                 self.URL = urls
                 def totalVideo():
+                    temp_object = []
+                    try:
+                        with open("temp/temp.json", 'r') as r:
+                            temp_object = json.load(r)
+                            r.close()
+                        if self.PLAYLIST_TITLE in temp_object:
+                            temp_object = temp_object[self.PLAYLIST_TITLE]
+                            print(f"TEMP_OBJ = {temp_object}")
+                    except Exception as e:
+                        print(f"{e}-{traceback.format_exc()}")
+
                     self.txt_main.insert(INSERT, f"\nCALCULATE TOTAL VIDEO... PLEASE WAIT..")
                     self.bar_main.config(mode='determinate')
                     self.b_clear.config(state=DISABLED)
                     self.bar_main['value'] = 0
                     self.bar_main.start(1000)
+                    self.check_downloaded = []
                     for u in list(urls):
                         engine = YouTube(u)
                         char_list = [str(engine.title)[j] for j in range(len(str(engine.title))) if ord(str(engine.title)[j]) in range(65536)]
@@ -222,6 +244,8 @@ class GUI():
                             filter = filter + j
                         self.DATA[filter] = u
                         print(filter)
+                        if u not in temp_object:
+                            self.check_downloaded.append(filter)
                         self.bar_main['value'] = float(len(self.DATA)/len(urls)) * 100
                         self.lbl_barMain.config(text=f'0/{len(self.DATA)}')
 
@@ -230,7 +254,14 @@ class GUI():
                     self.bar_main.config(mode='indeterminate')
                     self.bar_main.start()
                     self.txt_main.insert(INSERT, f"\nTOTAL VIDEO FOUND, {len(urls)}")
-                    self.txt_main.insert(INSERT, f"\nFOR NOW PLAYLIST, CAN ONLY DOWNLOAD MP3 FORMAT")
+                    self.txt_main.insert(INSERT, f"\nFOR NOW PLAYLIST, CAN ONLY DOWNLOAD MP3 FORMAT\n")
+                    if len(self.check_downloaded) != len(list(urls)):
+                        self.txt_main.insert(INSERT, f"\n{len(self.check_downloaded)} not download yet", 'warning')
+                        self.txt_main.insert(INSERT, f"\n")
+                        for d in self.check_downloaded:
+                            self.txt_main.insert(INSERT, f"{d}", 'warning')
+                            self.txt_main.insert(INSERT, f"\n")
+                        print(f"NOT DOWNLOAD SONG = {self.check_downloaded}")
                     self.txt_main.config(state=DISABLED)
                     self.b_mp3.config(state=NORMAL,command=lambda: Thread(target=self.mp3Download, args=(self.URL, self.DATA)).start(), )
                     self.b_clear.config(state=NORMAL)
@@ -275,12 +306,12 @@ class GUI():
 
                         yt = YouTube(u, on_progress_callback=show_progress_bar)
                         thumbnail = yt.thumbnail_url
-                        # print(yt.metadata)
                         try:
                             artist = yt.metadata[0]['Artist']
                             album = yt.metadata[0]['Album']
                             song = yt.title
-                        except:
+                        except Exception as e:
+                            # print(traceback.format_exc())
                             artist = album = "UNKNOWN"
                             song = yt.title
                         print(artist, album, song)
@@ -323,7 +354,7 @@ class GUI():
                                         thumb_data = thumbPhoto(thumbnail)
                                         file.write(thumb_data)
 
-                                except error:
+                                except:
                                     pass
 
                                 audiofile.tag.images.set(ImageFrame.FRONT_COVER, open(thumb_path, 'rb').read(),
@@ -352,6 +383,9 @@ class GUI():
                             total_mb += FILESIZEMB
                             self.lbl_totalMB.config(text=f"TOTAL DOWNLOAD: {total_mb.__round__(2)} MB (estimated)")
 
+                        self.PLAYLIST.append(u)
+
+
                     except Exception as e:
                         print(traceback.format_exc())
                         self.txt_main.config(state=NORMAL)
@@ -363,6 +397,7 @@ class GUI():
                         self.txt_main.config(state=DISABLED)
                         self.lbl_barMain.config(text=f'{c}/{len(url)}')
                         k += 1
+
                     self.txt_main.see(INSERT)
                     END = time.time()
                     time_taken = float((END - START) / 60).__round__(2)
@@ -376,6 +411,26 @@ class GUI():
                 self.txt_main.insert(INSERT, f"\n{len(url) - c} files FAIL", 'error')
                 self.txt_main.insert(INSERT, f"\n{time_taken} minute(s) to download {c} file(s)", 'success')
                 self.lbl_remainTime.config(text=f'REMAIN TIMES: 0.0 Minute(s)')
+
+                # save temp file for downloaded mp3
+                try:
+                    with open("temp/temp.json", 'r') as r:
+                        temp_object = json.load(r)
+                        r.close()
+                    if temp_object[self.PLAYLIST_TITLE] is None:
+                        temp_object[self.PLAYLIST_TITLE] = self.PLAYLIST
+                    else:
+                        temp_object[self.PLAYLIST_TITLE] = list(set(temp_object[self.PLAYLIST_TITLE] + self.PLAYLIST))
+                    temp_object = json.dumps(temp_object, indent = 4)
+                    with open("temp/temp.json", 'w') as w:
+                        print("write to json")
+                        w.write(temp_object)
+                        w.close()
+                    self.PLAYLIST = []
+                except Exception as e:
+                    print(e)
+
+
 
                 self.txt_main.config(state=DISABLED)
                 self.e_search.config(state='normal')
