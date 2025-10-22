@@ -1,0 +1,113 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "F:/Coding/Python/Python GUI/youtube-downloader-main/main.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": false
+  },
+  {
+   "optionDest": "console",
+   "value": false
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "F:/Coding/Python/Python GUI/youtube-downloader-main/yt.ico"
+  },
+  {
+   "optionDest": "name",
+   "value": "Youtube Downloader v2.0"
+  },
+  {
+   "optionDest": "ascii",
+   "value": false
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "loglevel",
+   "value": "INFO"
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "embed_manifest",
+   "value": true
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "win_private_assemblies",
+   "value": false
+  },
+  {
+   "optionDest": "win_no_prefer_redirects",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "argv_emulation",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "F:/Coding/Python/Python GUI/youtube-downloader-main/ffmpeg.exe;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "F:/Coding/Python/Python GUI/youtube-downloader-main/ffplay.exe;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "F:/Coding/Python/Python GUI/youtube-downloader-main/ffprobe.exe;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "F:/Coding/Python/Python GUI/youtube-downloader-main/main.py;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "F:/Coding/Python/Python GUI/youtube-downloader-main/yt.ico;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "F:/Coding/Python/Python GUI/youtube-downloader-main/IMPORT/sv_ttk;sv_ttk/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "F:/Coding/Python/Python GUI/youtube-downloader-main/images;images/"
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}
