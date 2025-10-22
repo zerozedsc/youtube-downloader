@@ -1,0 +1,32 @@
+[project]
+name = "youtube-downloader-main"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4==4.12.3",
+    "bs4==0.0.2",
+    "certifi==2024.8.30",
+    "charset-normalizer==3.4.0",
+    "coverage==5.5",
+    "deprecation==2.1.0",
+    "eyed3==0.9.7",
+    "filetype==1.2.0",
+    "idna==3.10",
+    "packaging==24.1",
+    "pillow==11.0.0",
+    "pydub==0.25.1",
+    "pytube==15.0.0",
+    "pytubefix",
+    "requests==2.32.3",
+    "soupsieve==2.6",
+    "sv-ttk==2.6.0",
+    "toml==0.10.2",
+    "urllib3==2.2.3",
+    "validators==0.34.0",
+    "yt-dlp>=2025.9.26",
+]
+
+[tool.uv.sources]
+pytubefix = { git = "https://github.com/felipeucelli/pytubefix.git", rev = "sig-nsig" }

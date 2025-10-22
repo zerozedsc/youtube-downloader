@@ -1,0 +1,2747 @@
+09-05-2023
+---------------------------------------------------------------------------------------------------------------------------------------
+url Exception
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=x60xR0TEQ88&list=PLVf_ie75f1bZyHPvgCpNGSRPMtwASSzVN&index=1@ 
+'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 323, in startDownload
+    artist = yt.metadata[0]['Artist']
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\lib\site-packages\pytube\metadata.py", line 47, in __getitem__
+    return self._metadata[key]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 328, in startDownload
+    print(yt.description[0]['Artist'].encode('utf-8').decode('unicode_escape'))
+TypeError: 'NoneType' object is not subscriptable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://music.youtube.com/watch?v=8sdyomxakZg&list=PLVf_ie75f1bZyHPvgCpNGSRPMtwASSzVN@ 
+'YouTube' object has no attribute 'desc'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 323, in startDownload
+    artist = yt.description[0]['Artist'].encode('utf-8').decode('unicode_escape')
+TypeError: 'NoneType' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 328, in startDownload
+    print(yt.desc())
+AttributeError: 'YouTube' object has no attribute 'desc'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=DVt13wPJqmw&list=PLVf_ie75f1bZyHPvgCpNGSRPMtwASSzVN&index=1@ 
+YouTube.__init__() missing 1 required positional argument: 'url'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 343, in startDownload
+    yt = YouTube(on_progress_callback=show_progress_bar)
+TypeError: YouTube.__init__() missing 1 required positional argument: 'url'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=ZpENe4GOMAw@ 
+'n'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 447, in apply_signature
+    initial_n = list(query_params['n'])
+                     ~~~~~~~~~~~~^^^^^
+KeyError: 'n'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=8sdyomxakZg@ 
+HTTP Error 403: Forbidden
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 376, in startDownload
+    out_file = video.download(output_path=os.path.abspath("download"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\streams.py", line 314, in download
+    for chunk in request.stream(
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\request.py", line 157, in stream
+    response = _execute_request(
+               ^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\request.py", line 37, in _execute_request
+    return urlopen(request, timeout=timeout)  # nosec
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=SmvILpnM2U8@ 
+HTTP Error 403: Forbidden
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 376, in startDownload
+    out_file = video.download(output_path=os.path.abspath("download"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\streams.py", line 314, in download
+    for chunk in request.stream(
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\request.py", line 157, in stream
+    response = _execute_request(
+               ^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\request.py", line 37, in _execute_request
+    return urlopen(request, timeout=timeout)  # nosec
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=-pI20km6GMY@ 
+HTTP Error 403: Forbidden
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 376, in startDownload
+    out_file = video.download(output_path=os.path.abspath("download"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\streams.py", line 314, in download
+    for chunk in request.stream(
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\request.py", line 157, in stream
+    response = _execute_request(
+               ^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\request.py", line 37, in _execute_request
+    return urlopen(request, timeout=timeout)  # nosec
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=32MClTwtJPs@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=oXlEEXws3gc@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=PCwEStcxM4w@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=32MClTwtJPs@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=oXlEEXws3gc@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=PCwEStcxM4w@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=32MClTwtJPs@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    """
+        
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    # Begin by extracting the correct function name
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    """
+        
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    # Begin by extracting the correct function name
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=oXlEEXws3gc@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    """
+        
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    # Begin by extracting the correct function name
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    """
+        
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    # Begin by extracting the correct function name
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=PCwEStcxM4w@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    """
+        
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    # Begin by extracting the correct function name
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    """
+        
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    # Begin by extracting the correct function name
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=32MClTwtJPs@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 406, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 320, in get_throttling_function_code
+    code_lines_list = find_object_from_startpoint(js, match.span()[1]).split('\n')
+                                                      ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=oXlEEXws3gc@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 406, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 320, in get_throttling_function_code
+    code_lines_list = find_object_from_startpoint(js, match.span()[1]).split('\n')
+                                                      ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=PCwEStcxM4w@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 406, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 320, in get_throttling_function_code
+    code_lines_list = find_object_from_startpoint(js, match.span()[1]).split('\n')
+                                                      ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=32MClTwtJPs&list=PLVf_ie75f1bZyHPvgCpNGSRPMtwASSzVN&index=1@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 406, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 320, in get_throttling_function_code
+    code_lines_list = find_object_from_startpoint(js, match.span()[1]).split('\n')
+                                                      ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=32MClTwtJPs&list=PLVf_ie75f1bZyHPvgCpNGSRPMtwASSzVN&index=1@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 406, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 312, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 297, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 406, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 312, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 297, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=qMQ4P-vI3JI@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=nK3DRKaNO34@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=I-lhrqey0rI@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=CbrXg11qfZo@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=8mQ0WYwgpnE@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=8kkJoad_JGQ@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=euHNy40usHQ@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=frZmHzAQDRU@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=s1EWc99hvrA@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=83wRCCtCq_s@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=SII-S-zCg-c@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=NBfShhk14cg@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=CE2xOXVyDEI@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=GZXT6SGWCCM@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=FX2WSHooVt8@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=HnD789mMzfI@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=hXQzOZn6VF0@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=gAXgLSbxTrw@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=fE9trKOuT3Q@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=_ynXmVrs39Y@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=c3TzuUeFnVk@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=C5IIoZsci8Y@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=eXFrD_LBeBQ@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=Akn_Gdi05Ys@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=qMQ4P-vI3JI@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=nK3DRKaNO34@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=I-lhrqey0rI@ 
+get_throttling_function_name: could not find match for multiple
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 188, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 405, in get_throttling_plan
+    raw_code = get_throttling_function_code(js)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 311, in get_throttling_function_code
+    name = re.escape(get_throttling_function_name(js))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 296, in get_throttling_function_name
+    raise RegexMatchError(
+pytube.exceptions.RegexMatchError: get_throttling_function_name: could not find match for multiple
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=gZnsObkxH3g@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=Km0bWFOcexM@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=rP6-Fsi_dQE@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=6kcD0z-t-80@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=gEiFt-ujFeU@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=eOk480K-EY8@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=FDVJ-izeGVk@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=SkFeGrSQPIA@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=NezEhR2lKRo@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=Ci_zad39Uhw@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=4tOn94i6Sp0@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=Pp6zN7uIkOc@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=6vqG32gEmzA@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=o8BLKnj_ZUE@ 
+'NoneType' object has no attribute 'span'
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 358, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 296, in streams
+    return StreamQuery(self.fmt_streams)
+                       ^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\__main__.py", line 181, in fmt_streams
+    extract.apply_signature(stream_manifest, self.vid_info, self.js)
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\extract.py", line 409, in apply_signature
+    cipher = Cipher(js=js)
+             ^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 43, in __init__
+    self.throttling_plan = get_throttling_plan(js)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytube\cipher.py", line 411, in get_throttling_plan
+    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+                                                               ^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'span'
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=5bPDMFqliQk@ 
+5bPDMFqliQk is unavailable
+Traceback (most recent call last):
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 362, in startDownload
+    MaxFileSize = video.filesize
+            ^^^^^^^^^^
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 632, in streams
+    self.check_availability()
+  File "F:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 339, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: 5bPDMFqliQk is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=fbZv-X-1hCQ@ 
+fbZv-X-1hCQ is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: fbZv-X-1hCQ is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=J4kvxP3Gkgc@ 
+J4kvxP3Gkgc is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: J4kvxP3Gkgc is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=NR_B8KIIjpY@ 
+NR_B8KIIjpY is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: NR_B8KIIjpY is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=1GaoCAc2N-A@ 
+1GaoCAc2N-A is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: 1GaoCAc2N-A is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=kQfqxMtF-GM@ 
+kQfqxMtF-GM is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: kQfqxMtF-GM is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=G9987T2q_Ak@ 
+G9987T2q_Ak is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: G9987T2q_Ak is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=sEvUoGyG02Q@ 
+sEvUoGyG02Q is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: sEvUoGyG02Q is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=ukYEgbe2QPw@ 
+ukYEgbe2QPw is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: ukYEgbe2QPw is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=EaSMdfAYWQ4@ 
+EaSMdfAYWQ4 is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: EaSMdfAYWQ4 is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=GqocjZkPdmA@ 
+GqocjZkPdmA is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: GqocjZkPdmA is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=qvk4Rl7r2GY@ 
+qvk4Rl7r2GY is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: qvk4Rl7r2GY is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=QtXNvoPfO84@ 
+QtXNvoPfO84 is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: QtXNvoPfO84 is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=M3pjFfKBonI@ 
+M3pjFfKBonI is unavailable
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 365, in startDownload
+    video = yt.streams.filter(only_audio=True).first()
+            ^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 722, in streams
+    self.check_availability()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\__main__.py", line 391, in check_availability
+    raise exceptions.VideoUnavailable(video_id=self.video_id)
+pytubefix.exceptions.VideoUnavailable: M3pjFfKBonI is unavailable
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=fbZv-X-1hCQ&list=PLVf_ie75f1bZyHPvgCpNGSRPMtwASSzVN&index=2@ 
+HTTP Error 403: Forbidden
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 383, in startDownload
+    out_file = video.download(output_path=os.path.abspath("download"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\streams.py", line 372, in download
+    for chunk in request.stream(
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\request.py", line 154, in stream
+    response = _execute_request(
+               ^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\request.py", line 35, in _execute_request
+    return urlopen(request, timeout=timeout)  # nosec
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=fbZv-X-1hCQ@ 
+HTTP Error 403: Forbidden
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 383, in startDownload
+    out_file = video.download(output_path=os.path.abspath("download"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\streams.py", line 372, in download
+    for chunk in request.stream(
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\request.py", line 154, in stream
+    response = _execute_request(
+               ^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\request.py", line 35, in _execute_request
+    return urlopen(request, timeout=timeout)  # nosec
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=fbZv-X-1hCQ@ 
+HTTP Error 403: Forbidden
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 388, in startDownload
+    out_file = video.download(output_path=os.path.abspath("download"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\streams.py", line 372, in download
+    for chunk in request.stream(
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\request.py", line 154, in stream
+    response = _execute_request(
+               ^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\request.py", line 35, in _execute_request
+    return urlopen(request, timeout=timeout)  # nosec
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=fbZv-X-1hCQ@ 
+HTTP Error 403: Forbidden
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 388, in startDownload
+    out_file = video.download(output_path=os.path.abspath("download"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\streams.py", line 372, in download
+    for chunk in request.stream(
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\request.py", line 154, in stream
+    response = _execute_request(
+               ^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\request.py", line 35, in _execute_request
+    return urlopen(request, timeout=timeout)  # nosec
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+
+---------------------------------------------------------------------------------------------------------------------------------------
+@https://www.youtube.com/watch?v=fbZv-X-1hCQ&list=PLVf_ie75f1bZyHPvgCpNGSRPMtwASSzVN@ 
+HTTP Error 403: Forbidden
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 446, in startDownload
+    out_file = video.download(output_path=os.path.abspath("download"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\streams.py", line 372, in download
+    for chunk in request.stream(
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\request.py", line 154, in stream
+    response = _execute_request(
+               ^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\venv\Lib\site-packages\pytubefix\request.py", line 35, in _execute_request
+    return urlopen(request, timeout=timeout)  # nosec
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\zeroz\AppData\Local\Programs\Python\Python311\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden
+

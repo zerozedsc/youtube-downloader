@@ -1,0 +1,103 @@
+23-10-2025
+---------------------------------------------------------------------------------------------------------------------------------------
+download_error
+---------------------------------------------------------------------------------------------------------------------------------------
+All download methods failed for https://www.youtube.com/watch?v=IOY7T3-RrF4&list=PLVf_ie75f1bZyHPvgCpNGSRPMtwASSzVN&index=1: ERROR: unable to download video data: HTTP Error 403: Forbidden
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3485, in process_info
+    success, real_download = self.dl(temp_filename, info_dict)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3227, in dl
+    return fd.download(name, new_info, subtitle)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\downloader\common.py", line 479, in download
+    ret = self.real_download(filename, info_dict)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\downloader\http.py", line 362, in real_download
+    establish_connection()
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\downloader\http.py", line 119, in establish_connection
+    ctx.data = self.ydl.urlopen(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 4190, in urlopen
+    return self._request_director.send(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\networking\common.py", line 117, in send
+    response = handler.send(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\networking\_helper.py", line 194, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\networking\common.py", line 359, in send
+    return self._send(request)
+           ^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\networking\_requests.py", line 357, in _send
+    raise HTTPError(res, redirect_loop=max_redirects_exceeded)
+yt_dlp.networking.exceptions.HTTPError: HTTP Error 403: Forbidden
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\main.py", line 599, in startDownload
+    info = ydl.extract_info(u, download=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1634, in extract_info
+    return self.__extract_info(url, self.get_info_extractor(key), download, extra_info, process)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1645, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1801, in __extract_info
+    return self.process_ie_result(ie_result, download, extra_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1880, in process_ie_result
+    return self.extract_info(
+           ^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1634, in extract_info
+    return self.__extract_info(url, self.get_info_extractor(key), download, extra_info, process)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1645, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1801, in __extract_info
+    return self.process_ie_result(ie_result, download, extra_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1930, in process_ie_result
+    return self.__process_playlist(ie_result, download)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 2078, in __process_playlist
+    entry_result = self.__process_iterable_entry(entry, download, collections.ChainMap({
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1645, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 2110, in __process_iterable_entry
+    return self.process_ie_result(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1880, in process_ie_result
+    return self.extract_info(
+           ^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1634, in extract_info
+    return self.__extract_info(url, self.get_info_extractor(key), download, extra_info, process)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1645, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1801, in __extract_info
+    return self.process_ie_result(ie_result, download, extra_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1860, in process_ie_result
+    ie_result = self.process_video_result(ie_result, download=download)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3038, in process_video_result
+    self.process_info(new_info)
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 187, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 3494, in process_info
+    self.report_error(f'unable to download video data: {err}')
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1103, in report_error
+    self.trouble(f'{self._format_err("ERROR:", self.Styles.ERROR)} {message}', *args, **kwargs)
+  File "J:\Coding\Python\Python GUI\youtube-downloader-main\.venv\Lib\site-packages\yt_dlp\YoutubeDL.py", line 1042, in trouble
+    raise DownloadError(message, exc_info)
+yt_dlp.utils.DownloadError: ERROR: unable to download video data: HTTP Error 403: Forbidden
+
